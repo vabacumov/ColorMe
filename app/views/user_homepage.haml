@@ -4,4 +4,15 @@
 
 / We should use the @user.color to also color the background of the page
 %h1= current_user.color
-=current_user.splashes
+
+%h2 add a splash of #{current_user.color} !
+%form{:id => "new-splash", :action => "/users/splash/new", :method => "post"}
+  %input{:type => "text", :name => "content", :placeholder => "splash"}
+  %input{:type => "submit", :value => "splash!"}
+
+%h3 #{current_user.id}
+
+%ul
+  -@splash_contents.each do |content|
+    %li
+      =content

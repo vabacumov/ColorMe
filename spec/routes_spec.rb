@@ -22,13 +22,6 @@ describe "routes" do
     end
   end
 
-  describe "/users/:color" do
-    it "it renders a valid status" do
-      get '/users/:color'
-      expect(last_response.status).to eq(200)
-    end
-  end
-
   describe "/users/edit" do
     it "it renders a valid status" do
       get '/users/edit'

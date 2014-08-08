@@ -50,7 +50,7 @@ delete '/users/logout' do #deletes session
   redirect '/'
 end
 
-get '/users/edit_profile' do #form to modify profile
+get '/users/edit' do #form to modify profile
 end
 
 
