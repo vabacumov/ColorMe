@@ -1,7 +1,6 @@
-!!!
-!--User Homepage--!
-
-%article
 / We should use the @user.color to also color the background of the page
-  %h1= "@user.color"
-    = @splashes
+%h1 Feed of Splashes
+- @splashes.each do |s|
+  %p= s.content
+
+
