@@ -1,4 +1,4 @@
-require 'Faker'
+
 
 50.times do
   color = "#" + ("%06x" % (rand * 0xffffff))
