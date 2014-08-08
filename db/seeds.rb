@@ -15,5 +15,5 @@ end
 end
 
 30.times do
-
+  Relationship.create(follower_id: rand(1..50), followed_id: rand(1..50))
 end
