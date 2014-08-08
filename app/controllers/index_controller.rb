@@ -1,7 +1,10 @@
 ### PUBLICLY ACCESSIBLE WITHOUT SESSION ###
 
 get '/' do
+  #check logic here so person doesn't go back
   if login?
+    @splashes = current_user.splashes
+    @splash_contents = @splashes.map {|splash| splash[:content]}
     haml :user_homepage
   else
     haml :homepage, :layout => false
