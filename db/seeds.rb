@@ -11,5 +11,9 @@ end
 
 100.times do
   content = Faker::Lorem.sentence
-  Splash.create(content: content, user_id: rand(1..50))
+  Splash.create(content: content, user_id: rand(1..50), original_splash_id: rand(1..5))
+end
+
+30.times do
+
 end
