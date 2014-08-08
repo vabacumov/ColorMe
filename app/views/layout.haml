@@ -12,7 +12,7 @@
         %ul
           -if login?
             %li
-              %form{:id => "sign-out", :action => "/sessions/#{current_user.id}", :method => "post"}
+              %form{:id => "sign-out", :action => "/users/logout", :method => "post"}
                 %input{:name =>"_method", :type => "hidden", :value => "delete"}
                 %input{:type =>"submit", :value => "Sign Out"}
           -else

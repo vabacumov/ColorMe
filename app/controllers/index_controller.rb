@@ -13,6 +13,14 @@ get '/users/new' do #form to create a new user
 end
 
 post '/users/new' do #creates the new user
+  salt = BCrypt::Engine.generate_salt
+  hash = BCrypt::Engine.hash_secret(params[:password], salt)
+  User.create( :email => params[:email],
+               :color => params[:color],
+               :salt => salt,
+               :pw_hash => hash )
+  session[:email] = params[:email]
+  redirect '/'
 end
 
 get '/users/login' do #form to login
@@ -29,7 +37,9 @@ end
 
 ####### REQUIRES SESSION ########
 
-delete '/users/session' do #deletes session
+delete '/users/logout' do #deletes session
+  session.clear
+  redirect '/'
 end
 
 get '/users/edit_profile' do #form to modify profile
