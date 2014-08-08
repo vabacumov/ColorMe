@@ -2,5 +2,20 @@
 %head
   %title COLORME
 %body
-  #content= yield
+  .container
+    #header
+      #logo
+      #account_management
+        %ul
+          -if login?
+            %li
+              %form{:id => "sign-out", :action => "/sessions/#{current_user.id}", :method => "post"}
+                %input{:name =>"_method", :type => "hidden", :value => "delete"}
+                %input{:type =>"submit", :value => "Sign Out"}
+          -else
+            %li
+              %a{:href => "/sessions/new"}Sign In
+              %a{:href => "/users/new"}Sign Up
+    #content= yield
+    #footer
 
