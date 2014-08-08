@@ -7,6 +7,7 @@ describe "routes" do
       expect(last_response.status).to eq(200)
     end
   end
+
   describe "/users" do
     it "it renders a valid status" do
       get '/users'
@@ -42,23 +43,23 @@ describe "routes" do
     end
   end
 
-  describe "/splashes/:id" do
+  describe "/users/:user_id/splashes/:id" do
     it "it renders a valid status" do
-      get '/splashes/:id'
+      get '/users/:user_id/splashes/:id'
       expect(last_response.status).to eq(200)
     end
   end
 
-  describe "/splashes/:id/delete" do
+  describe "/users/:user_id/splashes/:id/delete" do
     it "it renders a valid status" do
-      get '/splashes/:id/delete'
+      get '/users/:user_id/splashes/delete'
       expect(last_response.status).to eq(200)
     end
   end
 
-  describe "/splashes/new" do
+  describe "/users/:user_id/splashes/new" do
     it "it renders a valid status" do
-      get '/splashes/new'
+      get '/users/:user_id/splashes/new'
       expect(last_response.status).to eq(200)
     end
   end
