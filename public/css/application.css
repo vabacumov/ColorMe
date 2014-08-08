@@ -1,41 +1,12 @@
 html, body {
   height:100%;
   min-height:100%;
-  background-color: #F6B242;
-}
-
-nav {
-  height: 20%;
   background-color: white;
 }
 
-/* FORM STYLING */
+/* HOMEPAGE STYLING */
 
-input, textarea {
-    color: black;
-    text-align: center;
-    border: 0;
-    border-radius: 5px;
-    padding: 9px;
-    font: normal 20px/100% Verdana, Tahoma, sans-serif;
-    background: rgba(255,255,255,0.8);
-    }
-
-#login {
-    width: 250px;
-    background: #4A90E2;
-    color: #FFFFFF;
-}
-
-a {
-  display: block;
-  text-decoration: none;
-  font: normal 18px/100% Verdana, Tahoma, sans-serif;
-  color: #4A90E2;
-  margin-top: 10px;
-}
-
-.container {
+.container-homepage {
   width: 100%;
   height: 100vh;
   background-image: url('/images/color_logo_v02.png');
@@ -43,10 +14,23 @@ a {
   background-size: 100% auto;
 }
 
-.container h1 {
-  font-size: 17pt;
+#footer {
+  width: 100%;
+  height: 100%;
+  background-position: bottom;
+  background-image: url('/images/drip_v02.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
+
+nav {
+  width: 100%;
+  height: 40px;
+  font-weight: bold;
+}
+
+/* HOMEPAGE FORM STYLING */
 #account_management {
     border-radius: 5px;
     width: 350px;
@@ -65,70 +49,80 @@ a {
   padding: 40px;
 }
 
+input, textarea {
+    color: black;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    padding: 9px;
+    margin: 5px;
+    font: normal 20px/100% Verdana, Tahoma, sans-serif;
+    background: rgba(255,255,255,0.8);
+    }
 
-nav {
+#login {
+    width: 250px;
+    background: #4A90E2;
+    color: #FFFFFF;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  font: normal 18px/100% Verdana, Tahoma, sans-serif;
+  color: #4A90E2;
+  margin-top: 10px;
+}
+
+/* LAYOUT STYLING */
+
+#account_management_layout ul {
+    color: #848484;
+    list-style-type: none;
+    position:absolute;
+    right:20px;
+    top:0;
+  }
+
+#logo {
   width: 100%;
-  height: 40px;
-  font-weight: bold;
+  height: 287px;
+  margin: auto 0;
+  background-color: #F6B242;
+  background-image: url('/images/color_logo_v02.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position: contain;
 }
 
-nav .brand, nav .brand a {
-  margin-left: 25px;
-  font-size: 18pt;
-  text-decoration: none;
-  color: #444;
+header {
+  width: 100%;
+  height: 200px;
+  background-position: bottom;
+  background-color: #F6B242;
+  background-image: url('/images/drip_v02.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.splash {
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  margin: 60px;
+}
+
+.splash-text {
+  border-radius: 10px;
+  background-color: blue;
+  display: inline-block;
   width: 60%;
-  display: inline-block;
+  text-align: left;
 }
-
-nav ul {
-  display: inline-block;
-  width: 30%;
-  text-align: right;
-}
-
-nav li {
-  margin-right: 25px;
-  display: inline;
-}
-
-nav li a {
-  color: gray;
-  text-decoration: none;
-}
-
-nav li a:hover {
-  text-decoration: underline;
-}
-
-form label {
-  font-weight: bold;
-  margin-right: 20px;
-}
-
-input {
-  margin-bottom: 10px;
-}
-
-.errors {
-  color: red;
-}
-
-form.quirks {
-  display: inline-block;
-}
-
-.submit {
+.splash a {
+  padding: 35px 70px;
+  font: normal 24px/50px Verdana, Tahoma, sans-serif;
+  color: white;
   text-align: center;
 }
 
-.label {
-  font-weight: bold;
-  float: left;
-  text-align: right;
-  margin-right: 20px;
-  width: 200px;
-}
-
-#sign-out input {
-  border:none;

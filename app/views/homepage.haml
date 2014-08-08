@@ -7,11 +7,11 @@
   %script{:src => "http://code.jquery.com/color/jquery.color-2.1.2.js"}
   %script{:src => "/js/application.js"}
 %body{:id => "background_color" }
-  .container
+  .container-homepage
     #homepage
     #account_management
       #account_management_center
-        %form{:id => "sign-in", :action => "/users/login", :method => "post"}
+        %form{:id => "sign-up", :action => "/users/login", :method => "post"}
           %input{:type => "email", :name => "email", :placeholder => "Email"}
           %input{:type => "password", :name => "password", :placeholder => "Password"}
           %input{:id => "login", :type => "submit", :value => "Login"}
