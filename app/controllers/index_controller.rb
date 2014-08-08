@@ -30,11 +30,15 @@ end
 post '/users/login' do #creates new session
   if User.find_by_email(params[:email]).valid?
     user = User.find_by_email(params[:email])
-    if user[:pw_hash] == hash = BCrypt::Engine.hash_secret(params[:password], user[:salt])
+    if user[:pw_hash] == BCrypt::Engine.hash_secret(params[:password], user[:salt])
+      session[:email] = user[:email]
+      redirect '/'
+    else
+      haml :error
+    end
+  end
 end
 
-get '/users/:color' do #display all of a users splashes
-end
 
 get '/users' do #list of all users
 end
