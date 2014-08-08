@@ -2,6 +2,6 @@
 %p= ("#" + ("%06x" % (rand * 0xffffff)))
 %form{:id => "sign-up", :action => "/users/new", :method => "post"}
   %input{:type => "text", :name => "color", :placeholder => "Color"}
-  %input{:type => "text", :name => "email", :placeholder => "Email"}
-  %input{:type => "text", :name => "password", :placeholder => "Password"}
+  %input{:type => "email", :name => "email", :placeholder => "Email"}
+  %input{:type => "password", :name => "password", :placeholder => "Password"}
   %input{:type => "submit", :value => "Login"}

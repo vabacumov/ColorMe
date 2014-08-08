@@ -12,8 +12,7 @@ helpers do
 #returns all the info for the currently logged in user
   def current_user
     user_email = session[:email]
-    user = User.find_by_email(user_email)
-    return user
+    User.find_by_email(user_email)
   end
 end
 
