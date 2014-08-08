@@ -13,3 +13,7 @@ end
   content = Faker::Lorem.sentence
   Splash.create(content: content, user_id: rand(1..50))
 end
+
+30.times do
+
+end
