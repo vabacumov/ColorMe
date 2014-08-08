@@ -1,0 +1,20 @@
+!!!
+%head
+  %title color.me
+  %link{:type => "text/css", :rel => "stylesheet", :href => "/css/normalize.css"}
+  %link{:type => "text/css", :rel => "stylesheet", :href => "/css/application.css"}
+  %script{:src => "http://code.jquery.com/jquery-2.1.1.js"}
+  %script{:src => "http://code.jquery.com/color/jquery.color-2.1.2.js"}
+  %script{:src => "/js/application.js"}
+%body{:id => "background_color" }
+  .container
+    #homepage
+    #account_management
+      #account_management_center
+        %form{:id => "sign-in", :action => "/users/login", :method => "post"}
+          %input{:type => "email", :name => "email", :placeholder => "Email"}
+          %input{:type => "password", :name => "password", :placeholder => "Password"}
+          %input{:id => "login", :type => "submit", :value => "Login"}
+        %a{:href=> "/users/new"} Sign Up
+    #footer
+
