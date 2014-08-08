@@ -14,7 +14,16 @@ helpers do
     user_email = session[:email]
     User.find_by_email(user_email)
   end
+
+  def current_users_splashes
+    @splashes = current_user.splashes
+  end
+
+  def all_splashes
+    Splash.all
+  end
 end
+
 
 # def redirect?
 # end

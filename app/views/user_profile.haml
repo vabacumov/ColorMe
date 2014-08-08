@@ -1,13 +1,6 @@
-%h1= current_user.color
-
-%h2 add a splash of #{current_user.color} !
-
-%h3 #{current_user.id}
-
--if current_user.splashes.any?
-  %ul
-    -@splash_contents.each do |content|
-      %li
-        =content
--else
-  %h1 your splashes here!
+- @splashes.each do |splash|
+  .splash
+    .splash-text{:style => "background-color: #{splash.user.color}" }
+      %a{:id => "#{splash.user.id}", :href => "/users/follow", :method => "post"}Follow
+      %a{:href => "/users/#{splash.user_id}"}
+        =splash.content

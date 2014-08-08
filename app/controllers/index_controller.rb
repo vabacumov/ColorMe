@@ -3,8 +3,11 @@
 get '/' do
   #check logic here so person doesn't go back
   if login?
-    @splashes = current_user.splashes
-    @splash_contents = @splashes.map {|splash| splash[:content]}
+    @splashes = all_splashes
+    # @splashes_user = current_user.splashes
+    # @splashes_all = Splash.all
+    #.sort_by(&:created_at).
+    #@splashes.map {|splash| splash[:content]}
     haml :user_homepage
   else
     haml :homepage, :layout => false
@@ -42,8 +45,12 @@ post '/users/login' do #creates new session
   end
 end
 
-
 get '/users' do #list of all users
+end
+
+get '/users/:user_id' do
+  @splashes = User.find(params[:user_id]).splashes
+  haml :user_profile
 end
 
 ####### REQUIRES SESSION ########

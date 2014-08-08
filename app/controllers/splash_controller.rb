@@ -1,11 +1,10 @@
 get '/splashes' do #display all splashes
-  @splashes = Splash.all
+  @splashes = all_splashes
   haml :splash
 end
 
 get '/users/:id/splashes' do #display a particular splash
-  @splashes = current_user.splashes
-  @splash_contents = @splashes.map {|splash| splash[:content]}
+  get_splashes
   haml :user_homepage
 end
 
