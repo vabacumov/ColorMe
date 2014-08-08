@@ -4,7 +4,7 @@ get '/' do
   if login?
     haml :user_homepage
   else
-    haml :sign_in
+    haml :sign_in, :layout => false
   end
 end
 
