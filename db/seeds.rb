@@ -4,7 +4,9 @@ require 'Faker'
   color = "#" + ("%06x" % (rand * 0xffffff))
   email = Faker::Internet.email
   password = Faker::Internet.password
-  User.create(color: color, email: email, password: password)
+  salt = BCrypt::Engine.generate_salt
+  hash = BCrypt::Engine.hash_secret(password, salt)
+  User.create(color: color, email: email, salt: salt, pw_hash: hash)
 end
 
 100.times do
