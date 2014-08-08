@@ -1,4 +1,12 @@
 get '/splashes' do #display all splashes
+  @splashes = Splash.all
+  haml :splash
+end
+
+get '/users/:user_id/splashes' do #display a particular splash
+  @user = User.find(params[:user_id])
+  @splashes = @user.splashes
+  haml :user_homepage
 end
 
 get '/users/:user_id/splashes/:id' do #display a particular splash
