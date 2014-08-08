@@ -6,16 +6,20 @@ end
 get '/users/:id/splashes' do #display a particular splash
   @splashes = current_user.splashes
   @splash_contents = @splashes.map {|splash| splash[:content]}
-  p "LOOK HERE"
-  p @splash_contents
   haml :user_homepage
 end
 
+
 post '/users/splash/new' do ##recieve new post
+  @splashes = current_user.splashes
+  @splash_contents = @splashes.map {|splash| splash[:content]}
   Splash.create(content: params[:content], user_id: current_user.id)
   redirect "/users/#{current_user.id}/splashes"
 end
 
+get '/users/:id/feed' do
+  haml :user_homepage
+end
 
 get '/users/:user_id/splashes/:id' do #display a particular splash
 
