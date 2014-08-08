@@ -1,8 +1,20 @@
+html, body {
+  height:100%;
+  min-height:100%;
+  background-color: blue;
+}
+
+nav {
+  height: 20%;
+  background-color: white;
+}
+
 .container {
-  margin: 20px auto;
-  width: 800px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  width: 100%;
+  height: 100vh;
+  background-image: url('/images/color_logo_v02.png');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .container h1 {
