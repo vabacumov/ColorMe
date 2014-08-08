@@ -1,0 +1,6 @@
+%p Do you really want to delete this splash?
+%form{:action => '/users/:user_id/splashes/:id/delete', :method => "post"}
+  %input{:type =>"hidden", :name => "_method", :value =>"delete"}
+  %input{:type => "submit", :value => "YES"}
+%a{href: '/users/%= @user.id/splashes/'}
+  %input{:type => "button", :value => "NO"}
