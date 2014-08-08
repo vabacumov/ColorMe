@@ -1,7 +1,7 @@
 !!!
 
 
-
+/ Make a button for homepage
 / We should use the @user.color to also color the background of the page
 %h1= current_user.color
 
@@ -12,7 +12,17 @@
 
 %h3 #{current_user.id}
 
-%ul
-  -@splash_contents.each do |content|
-    %li
-      =content
+-if current_user.splashes.any?
+  %ul
+    -@splash_contents.each do |content|
+      %li
+        =content
+-else
+  %h1 your splashes here!
+
+
+/ .splash{:style => "background-color:#{users.color}"}
+/   .splash-text
+/     %p=splash
+
+/ color of the user
