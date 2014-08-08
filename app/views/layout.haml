@@ -6,11 +6,12 @@
   %script{:src => "http://code.jquery.com/jquery-2.1.1.js"}
   %script{:src => "http://code.jquery.com/color/jquery.color-2.1.2.js"}
   %script{:src => "/js/application.js"}
-#body
+%body
   .container
     #logo
-    %nav
-      #account_management
+    %header
+      %img{:src=>"/images/color_logo_v02.png", :style => "visibility:hidden"}
+      #account_management_layout
         %ul
           -if login?
             %li
@@ -22,5 +23,4 @@
               %a{:href => "/users/login"}Sign In
               %a{:href => "/users/new"}Sign Up
     #content= yield
-    #footer
 
