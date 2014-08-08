@@ -5,7 +5,7 @@ end
 get '/users' do #list of all users
 end
 
-post or put '/users/login' do #route for logging in
+post '/users/login' do #route for logging in
 end
 
 get '/users/new' do #form to create a new user
