@@ -1,15 +1,18 @@
 !!!
 %head
   %title COLORME
-%body
+  %link{:type => "text/css", :rel => "stylesheet", :href => "/css/normalize.css"}
+  %link{:type => "text/css", :rel => "stylesheet", :href => "/css/application.css"}
+  %script{:src => "/js/application.js"}
+#body
   .container
-    #header
+    %nav
       #logo
       #account_management
         %ul
           -if login?
             %li
-              %form{:id => "sign-out", :action => "/sessions/#{current_user.id}", :method => "post"}
+              %form{:id => "sign-out", :action => "/users/logout", :method => "post"}
                 %input{:name =>"_method", :type => "hidden", :value => "delete"}
                 %input{:type =>"submit", :value => "Sign Out"}
           -else
