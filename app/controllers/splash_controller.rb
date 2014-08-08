@@ -3,9 +3,7 @@ get '/splashes' do #display all splashes
   haml :splash
 end
 
-get '/users/:user_id/splashes' do #display a particular splash
-  @user = User.find(params[:user_id])
-  @splashes = @user.splashes
+get '/users/:id/splashes' do #display a particular splash
   haml :user_homepage
 end
 

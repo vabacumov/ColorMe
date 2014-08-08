@@ -1,11 +1,11 @@
 ### PUBLICLY ACCESSIBLE WITHOUT SESSION ###
 
 get '/' do
-  # if login?
-  #   haml :user_homepage
-  # else
+  if login?
+    haml :user_homepage
+  else
     haml :index
-  # end
+  end
 end
 
 get '/users/new' do #form to create a new user
@@ -20,10 +20,11 @@ post '/users/new' do #creates the new user
                :salt => salt,
                :pw_hash => hash )
   session[:email] = params[:email]
-  redirect '/'
+  redirect "/"
 end
 
 get '/users/login' do #form to login
+  haml :sign_in
 end
 
 post '/users/login' do #creates new session
