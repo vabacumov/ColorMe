@@ -1,9 +1,12 @@
 !!!
 %head
   %title COLORME
-%body
+  %link{:type => "text/css", :rel => "stylesheet", :href => "/css/normalize.css"}
+  %link{:type => "text/css", :rel => "stylesheet", :href => "/css/application.css"}
+  %script{:src => "/js/application.js"}
+#body
   .container
-    #header
+    %nav
       #logo
       #account_management
         %ul

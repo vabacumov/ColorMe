@@ -13,6 +13,10 @@ end
 get '/users/edit' do #form to modify profile
 end
 
-get '/users/new' do #form to create a new user
+get '/users/new/' do #form to create a new user
   haml :sign_up
+end
+
+post '/users' do
+
 end

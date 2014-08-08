@@ -1,0 +1,7 @@
+%h1 Create Account
+%p= ("#" + ("%06x" % (rand * 0xffffff)))
+%form{:id => "sign-up", :action => "/users", :method => "post"}
+  %input{:type => "text", :name => "color", :placeholder => "Color"}
+  %input{:type => "text", :name => "email", :placeholder => "Email"}
+  %input{:type => "text", :name => "password", :placeholder => "Password"}
+  %input{:type => "submit", :value => "Login"}
