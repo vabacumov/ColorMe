@@ -20,7 +20,7 @@ post '/users/new' do #creates the new user
                :salt => salt,
                :pw_hash => hash )
   session[:email] = params[:email]
-  redirect "/"
+  redirect "/users/#{current_user.id}/splashes"
 end
 
 get '/users/login' do #form to login
@@ -28,6 +28,9 @@ get '/users/login' do #form to login
 end
 
 post '/users/login' do #creates new session
+  if User.find_by_email(params[:email]).valid?
+    user = User.find_by_email(params[:email])
+    if user[:pw_hash] == hash = BCrypt::Engine.hash_secret(params[:password], user[:salt])
 end
 
 get '/users/:color' do #display all of a users splashes
