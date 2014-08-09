@@ -1,10 +1,15 @@
 !!!
 
-%form{:id => "new-splash", :action => "/users/splash/new", :method => "post"}
-  %input{:type => "text", :name => "content", :placeholder => "splash"}
-  %input{:type => "submit", :value => "splash!"}
 
-%h3 #{current_user.id}
+
+.category
+  %h1{:id => "heading", :style => "color: #{current_user.color}"} CREATE SPLASH
+  %form{:action => "/users/splash/new", :method => "post"}
+    %input{:id => "new-splash", :type => "text", :name => "content", :placeholder => "#{current_user.color.upcase} says...", :style => "border: 5px solid #{current_user.color}"}
+    %input{:id => "splash-button", :type => "submit", :value => "SPLASH", :style => "background-color: #{current_user.color}"}
+
+.category
+  %h1{:id => "heading", :style => "color: #{current_user.color}"} #{current_user.color.upcase}'s SPLASH FEED
 
 - @splashes.each do |splash|
   .splash

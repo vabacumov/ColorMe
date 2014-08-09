@@ -23,6 +23,9 @@ html, body {
   background-size: 100% auto;
 }
 
+#homepage-create-a {
+  margin-top: 10px;
+}
 
 nav {
   width: 100%;
@@ -71,7 +74,6 @@ a {
   text-decoration: none;
   font: normal 18px/100% Verdana, Tahoma, sans-serif;
   color: #4A90E2;
-  margin-top: 10px;
 }
 
 /* LAYOUT STYLING */
@@ -125,6 +127,37 @@ header {
   color: white;
   text-align: center;
 }
+
+/* POST SPLASH FIELD */
+
+.category {
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#heading {
+  font-size: 60px;
+}
+#new-splash {
+  display: inline-block;
+  width: 30%;
+  height: 50px;
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+  font: normal 20px/100% Verdana, Tahoma, sans-serif;
+}
+
+#splash-button {
+  border-radius: 10px;
+  color: white;
+  margin:2%;
+  width: 150px;
+  height: 70px;
+}
+
 
 
 /*.splash

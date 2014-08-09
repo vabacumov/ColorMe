@@ -20,7 +20,7 @@ helpers do
   end
 
   def all_splashes
-    Splash.all
+    Splash.all.sort_by(&:created_at).reverse
   end
 end
 
